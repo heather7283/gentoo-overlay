@@ -1,0 +1,14 @@
+diff --git a/Makefile.in b/Makefile.in
+index 118bd0b..01b84e3 100644
+--- a/Makefile.in
++++ b/Makefile.in
+@@ -10,8 +10,7 @@
+ LIBNETBRAKE=libnetbrake.so.0.1
+ NETBRAKE=netbrake
+ 
+-CC=gcc
+-CFLAGS= -fPIC -Wall -O2 -g
++CFLAGS=$(CFLAGS) -fPIC -Wall
+ SHAREDFLAGS= -nostartfiles -shared -Wl,-soname,libnetbrake.so.0
+ 
+ RANLIB=/usr/bin/ranlib
