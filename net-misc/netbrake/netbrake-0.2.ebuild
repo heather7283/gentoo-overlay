@@ -5,8 +5,6 @@ inherit flag-o-matic
 DESCRIPTION="Utility to limit the bandwidth used by a process"
 HOMEPAGE="http://www.hping.org/netbrake/"
 
-# The website was 404ing
-SRC_URI="http://web.archive.org/web/20151018190016/http://www.hping.org/netbrake/netbrake-0.2.tar.gz"
 S="${WORKDIR}/netbrake"
 
 LICENSE="X11"
@@ -17,7 +15,12 @@ IUSE="httpfs"
 
 PATCHES=(
 	"${FILESDIR}/x86_64.patch"
+	"${FILESDIR}/makefile.patch"
 )
+
+src_unpack() {
+	unpack "${FILESDIR}/netbrake-0.2.tar.gz"
+}
 
 src_configure() {
 	if use httpfs; then
