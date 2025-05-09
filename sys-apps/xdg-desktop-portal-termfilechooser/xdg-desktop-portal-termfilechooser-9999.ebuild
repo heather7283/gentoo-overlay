@@ -10,7 +10,7 @@ EGIT_REPO_URI="https://github.com/heather7283/xdg-desktop-portal-termfilechooser
 
 LICENSE="MIT"
 SLOT="0"
-IUSE="elogind systemd examples"
+IUSE="elogind systemd"
 REQUIRED_USE="?? ( elogind systemd )"
 
 RDEPEND="
@@ -29,7 +29,6 @@ BDEPEND="
 src_configure() {
 	local emesonargs=(
 		$(meson_feature systemd)
-		$(meson_use examples)
 	)
 
 	if use systemd; then
