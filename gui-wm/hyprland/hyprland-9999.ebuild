@@ -17,7 +17,7 @@ fi
 
 LICENSE="BSD"
 SLOT="0"
-IUSE="X legacy-renderer qtutils systemd hyprpm"
+IUSE="X qtutils systemd hyprpm"
 
 # hyprpm (hyprland plugin manager) requires the dependencies at runtime
 # so that it can clone, compile and install plugins.
@@ -90,7 +90,6 @@ pkg_setup() {
 
 src_configure() {
 	local emesonargs=(
-		$(meson_feature legacy-renderer legacy_renderer)
 		$(meson_feature systemd)
 		$(meson_feature X xwayland)
 		$(meson_feature hyprpm)
