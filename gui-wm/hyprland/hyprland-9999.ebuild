@@ -67,7 +67,7 @@ DEPEND="
 	>=dev-libs/wayland-protocols-1.41
 "
 BDEPEND="
-	|| ( >=sys-devel/gcc-14:* >=llvm-core/clang-18:* )
+	|| ( >=sys-devel/gcc-15:* >=llvm-core/clang-18:* )
 	app-misc/jq
 	dev-build/cmake
 	>=dev-util/hyprwayland-scanner-0.3.10
@@ -77,8 +77,8 @@ BDEPEND="
 pkg_setup() {
 	[[ ${MERGE_TYPE} == binary ]] && return
 
-	if tc-is-gcc && ver_test $(gcc-version) -lt 14 ; then
-		eerror "Hyprland requires >=sys-devel/gcc-14 to build"
+	if tc-is-gcc && ver_test $(gcc-version) -lt 15 ; then
+		eerror "Hyprland requires >=sys-devel/gcc-15 to build"
 		eerror "Please upgrade GCC: emerge -v1 sys-devel/gcc"
 		die "GCC version is too old to compile Hyprland!"
 	elif tc-is-clang && ver_test $(clang-version) -lt 18 ; then
