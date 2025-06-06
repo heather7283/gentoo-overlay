@@ -8,7 +8,7 @@ HOMEPAGE="https://github.com/heather7283/xdg-desktop-portal-termfilechooser"
 inherit git-r3
 EGIT_REPO_URI="https://github.com/heather7283/xdg-desktop-portal-termfilechooser.git"
 
-LICENSE="MIT"
+LICENSE="GPL-3+"
 SLOT="0"
 IUSE="elogind systemd"
 REQUIRED_USE="?? ( elogind systemd )"
