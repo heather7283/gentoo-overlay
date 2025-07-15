@@ -14,6 +14,7 @@ SLOT="0"
 RDEPEND="
 	sys-libs/ncurses
 	media-video/pipewire
+	dev-libs/inih
 "
 DEPEND="
 	${RDEPEND}
